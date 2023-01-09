@@ -24,5 +24,4 @@ form.addEventListener('submit', (event) => {
     // Submit form
     const formData = { firstName, lastName, email, phone, password };
     console.log(formData);
-    // You can replace the console.log with an AJAX call or use a form submission library like Formik or SuperForm to handle the form submission
 });

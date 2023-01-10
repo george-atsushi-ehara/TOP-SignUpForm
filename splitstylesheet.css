@@ -17,12 +17,27 @@
 .logo {
   display: flex;
   flex-flow: row wrap;
+  height: auto;
+  position: relative;
+  top: 10vh;
+  padding: px 0;
+  justify-content: center;
+  align-items: center;
 }
 
-.background {
-  background-image: url(./urban-landscape-background.jpg);
-  background-position: center;
-  background-size: auto;
-  background-repeat: no-repeat;
-  width: 20vw;
+/* leftside */
+html {
+  background: url("urban-landscape-background.jpg") no-repeat center center
+    fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.right-side{
+    width: 70%
+    float: right;
+    background-color: antiquewhite;
+    flex-flow: column nowrap;
 }

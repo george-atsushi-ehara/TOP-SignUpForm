@@ -25,31 +25,51 @@
                 Necessitatibus, commodi!</h1>
         </div>
         <div class="form-container">
-            <form action="#">
+            <form>
                 <div class="form">
                     <div class="input">
-                        <label for="first-name">First Name:</label><br>
-                        <input type="text" id="first-name" name="first-name" required><br>
+                        <label for="first-name">First Name:</label>
+                        <br>
+                        <input type="text" id="first-name" name="first-name" required>
+                        <br>
+                        <span class="first-name-err"></span>
                     </div>
                     <div class="input">
-                        <label for="last-name">Last Name:</label><br>
-                        <input type="text" id="last-name" name="last-name" required><br>
+                        <label for="last-name">Last Name:</label>
+                        <br>
+                        <input type="text" id="last-name" name="last-name" required>
+                        <br>
+                        <span class="last-name-err"></span>
                     </div>
                     <div class="input">
-                        <label for="email">Email:</label><br>
-                        <input type="email" id="email" name="email" required><br>
+                        <label for="email">Email:</label>
+                        <br>
+                        <input type="email" id="email" name="email" required>
+                        <br>
+                        <span class="email-err"></span>
                     </div>
                     <div class="input">
-                        <label for="phone">Phone Number:</label><br>
-                        <input type="tel" id="phone" name="phone" required><br>
+                        <label for="phone">Phone Number:</label>
+                        <br>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required
+                            placeholder="xxx-xxx-xxxx"
+                            title="The phone number should be 10 digits and format should be xxx-xxx-xxxx">
+                        <br>
+                        <span class="phone-err"></span>
                     </div>
                     <div class="input">
-                        <label for="password">Password:</label><br>
-                        <input type="password" id="password" name="password" required><br>
+                        <label for="password">Password:</label>
+                        <br>
+                        <input type="password" id="password" name="password" required>
+                        <br>
+                        <span class="pw-err"></span>
                     </div>
                     <div class="input">
-                        <label for="confirm-password">Confirm Password:</label><br>
-                        <input type="password" id="confirm-password" name="confirm-password" required><br>
+                        <label for="confirm-password">Confirm Password:</label>
+                        <br>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+                        <br>
+                        <span class="cpw-err"></span>
                     </div>
                 </div>
                 <div class="submit">

@@ -1,27 +1,62 @@
-const form = document.querySelector('form');
+const form = document.querySelector("form");
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    // Select form fields
+    const firstName = document.getElementById('first-name');
+    const lastName = document.getElementById('last-name');
+    const email = document.getElementById('email');
+    const phone = document.getElementById('phone');
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('confirm-password');
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
+    // Select error message elements
+    const firstNameErr = document.querySelector('.first-name-err');
+    const lastNameErr = document.querySelector('.last-name-err');
+    const emailErr = document.querySelector('.email-err');
+    const phoneErr = document.querySelector('.phone-err');
+    const pwErr = document.querySelector('.pw-err');
+    const cpwErr = document.querySelector('.cpw-err');
 
-    const firstName = form.firstName.value;
-    const lastName = form.lastName.value;
-    const email = form.email.value;
-    const phone = form.phone.value;
-    const password = form.password.value;
-    const confirmPassword = form.confirmPassword.value;
-
-    if (password !== confirmPassword) {
-        alert('Passwords do not match');
-        return;
+    // Check first name field
+    if (!firstName.value) {
+        firstNameErr.textContent = "Please enter a first name.";
+    } else {
+        firstNameErr.textContent = "";
     }
 
-    // Validate form fields
-    if (!firstName || !lastName || !email || !phone || !password || !confirmPassword) {
-        alert('Please fill out all fields');
-        return;
+    // Check last name field
+    if (!lastName.value) {
+        lastNameErr.textContent = "Please enter a last name.";
+    } else {
+        lastNameErr.textContent = "";
     }
 
-    // Submit form
-    const formData = { firstName, lastName, email, phone, password };
-    console.log(formData);
+    // Check email field
+    if (!email.value) {
+        emailErr.textContent = "Please enter a valid email address.";
+    } else {
+        emailErr.textContent = "";
+    }
+
+    // Check phone field
+    phone.value = phone.value.replace(/\D/g, '');
+    if (!phone.value) {
+        phoneErr.textContent = "Please enter a phone number.";
+    } else {
+        phoneErr.textContent = "";
+    }
+
+    // Check password field
+    if (password.value != confirmPassword.value) {
+        passwordErr.textContent = "Passwords do not match.";
+        confirmPasswordErr.textContent = "Passwords do not match.";
+    } else {
+        passwordErr.textContent = "";
+        confirmPasswordErr.textContent = "";
+    }
+});
+
+const phone = document.getElementById('phone');
+phone.addEventListener("input", function (e) {
+    e.target.value = e.target.value.replace(/\D/g, '');
 });

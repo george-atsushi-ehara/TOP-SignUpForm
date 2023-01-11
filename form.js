@@ -19,7 +19,7 @@ form.addEventListener("submit", function (e) {
 
     // Check first name field
     if (!firstName.value) {
-        firstNameErr.textContent = "Please enter a first name.";
+        firstNameErr.innerHTML = "Please enter a first name.";
     } else {
         firstNameErr.textContent = "";
     }
@@ -47,12 +47,24 @@ form.addEventListener("submit", function (e) {
     }
 
     // Check password field
-    if (password.value != confirmPassword.value) {
-        passwordErr.textContent = "Passwords do not match.";
-        confirmPasswordErr.textContent = "Passwords do not match.";
+    if (!password.value) {
+        pwErr.textContent = "Please enter a password";
     } else {
-        passwordErr.textContent = "";
-        confirmPasswordErr.textContent = "";
+        pwErr.textContent = "";
+    }
+    
+    if (!confirmPassword.value) {
+        cpwErr.textContent = "Please enter a password";
+    } else {
+        cpwErr.textContent = "";
+    }
+
+    if (password.value != confirmPassword.value) {
+        pwErr.textContent = "Passwords do not match.";
+        cpwErr.textContent = "Passwords do not match.";
+    } else {
+        pwErr.textContent = "";
+        cpwErr.textContent = "";
     }
 });
 
